@@ -15,7 +15,7 @@
         
             <button type="submit" class="submitBtn"><a href="view.php">Status</a></button>
 
-            <button type="submit" class="submit"><a href="register.php">New updation</a></button> 
+            <button type="submit" class="submit"><a href="register.html">New updation</a></button> 
         </div>
        </form>
     </div>

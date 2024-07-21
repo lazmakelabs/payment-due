@@ -4,6 +4,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
     $pass=$_POST["password"];
 
     try {
+    require_once "config_session.inc.php";
     require_once "dbh.inc.php";
     require_once "login_model.inc.php";
     require_once "login_contr.inc.php";
@@ -12,22 +13,22 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
     $result = get_user($pdo, $username);
 
     // errors
-    $error=[];
+    $errors=[];
     if (!$result){
-        $error["account"]="Account does'nt exist.";
+        $errors["account"]="Account does'nt exist.";
     }else{
         $pwd = $result["passwrd"];
         if (!is_password_correct($pass, $pwd)){
-            $errors["Password"]="Incorrect credentials";
+            $errors["pass"]="Incorrect credentials";
         }
     }
-    
+
     require_once "login_view.inc.php";
     
 
 
-    if ($error){
-        $_SESSION["errors_register"]= $error;
+    if ($errors){
+        $_SESSION["errors_register"]= $errors;
         header("Location: ../index.php");
         die();
     }
