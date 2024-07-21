@@ -202,3 +202,80 @@ form .buttons button , .backBtn{
     }
 
 }
+
+
+
+
+
+/* ------------------   view page ----------------------    */
+
+
+.container1 .logo img {
+    width: 200px;
+    margin-bottom: 1%;
+}
+.container1{
+   position: relative;
+   max-width: 900px;
+   width: 100%;
+   border-radius: 6px;
+   padding: 30px;
+   margin-top: 2%;
+   background-color: #fff;
+   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.container1 header{
+   position: relative;
+   font-size: 20px;
+   font-weight: 600;
+   color: #333;
+   text-align: center;
+}
+
+
+
+.container1 form .title1{
+   display: block;
+   margin-bottom: 8px;
+   font-size: 16px;
+   font-weight: 500;
+   margin: 6px 0;
+   color: #333;
+}
+
+
+
+.input-field1 input, select{
+   outline: none;
+   font-size: 14px;
+   font-weight: 400;
+   color: #333;
+   border-radius: 5px;
+   border: 1px solid #aaa;
+   padding: 0 15px;
+   height: 42px;
+   margin: 8px 0;
+}
+
+
+
+@media (max-width: 750px) {
+   .container1 form{
+       overflow-y: scroll;
+   }
+   .container1 form::-webkit-scrollbar{
+      display: none;
+   }
+   form .fields .input-field1{
+       width: calc(100% / 2 - 15px);
+   }
+
+
+}
+
+@media (max-width: 550px) {
+   form .fields .input-field1{
+       width: 100%;
+   }
+
+}

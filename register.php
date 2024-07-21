@@ -9,9 +9,9 @@
 <body>
 <div class="container">
     <div class="logo"><img src="make labs logo.png" alt=""></div>
-                    <div class="status">
-                        <a href="/PAYMENT DUE/view.php" >Status</a>
-                    </div>
+        <div class="status">
+            <a href="/PAYMENT DUE/view.php" >Status</a>
+        </div>
         <header>Registration</header>
         <form action="Includes/register.inc.php" method="post">
             <div class="form first">
