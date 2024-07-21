@@ -39,17 +39,5 @@ declare(strict_types=1);
     </form>
 
 
-<?php
-
-if ($_SERVER['REQUEST_METHOD']=="POST"){
-    $s_name=$_POST["s_name"];
-    $c_name=$_POST["c_name"];
-    $dept=$_POST["dept"];
-
-    require_once "dbh.inc.php";
-    require_once "login_contr.inc.php";
-    get_data($pdo, $s_name, $c_name, $dept);
-}
-?>
 </body>
 </html>
