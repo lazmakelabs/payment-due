@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Payment Due</title>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="logo"><img src="make labs logo.png" alt=""></div>
+        <header>Registration</header>
+        <form action="#" method="post">
+            <div class="form first">
+                <div class="details personal">
+                    <div class="project-topic">
+                        <label>Project Topic :</label>
+                        <input type="text" placeholder="Enter project name" name="pr_topic" required>
+                    </div>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Student Name</label>
+                            <input type="text" placeholder="Enter your name" name="s_name" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Date </label>
+                            <input type="date" placeholder="Enter birth date" name="date" required>
+                        </div>
+                        <div class="input-field">
+                            <label>College Name</label>
+                            <input type="text" placeholder="Enter your College Name" name="c_name" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input type="number" placeholder="Enter mobile number"name="m_number" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Department</label>
+                            <input type="text" placeholder="Enter your Department" name="dept" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" placeholder="Enter your Email" name="email" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="details project">
+                    <span class="title">Project Details</span>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Project Type</label>
+                            <input type="text" placeholder="Enter ID type" name="pr_type" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Project Cost ₹ </label>
+                            <input type="number" placeholder="Enter Project Cost ₹" name="pr_cost" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Initial Payment ₹ </label>
+                            <input type="number" placeholder="Enter Initial Payment ₹" name="ini_pay" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Payment Method</label>
+                            <select name="pay_method" required>
+                                <option disabled selected>Select Payment</option>
+                                <option>Gpay</option>
+                                <option>PhonePay</option>
+                                <option>Paytm</option>
+                                <option>Cash</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>On Date</label>
+                            <input type="date" placeholder="Enter issued date" name="O_date" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Last Date</label>
+                            <input type="date" placeholder="Enter expiry date" name="L_date" required>
+                        </div>
+                    </div>
+                    <button class="nextBtn">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div> 
+            </div>
+            <div class="form second">
+                <div class="details address">
+                    <span class="title">Team Members</span>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Member 1</label>
+                            <input type="text" placeholder="TeamMember 1" name="m_1" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Member 2</label>
+                            <input type="text" placeholder="TeamMember 2" name="m_2" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Member 3</label>
+                            <input type="text" placeholder="TeamMember 3" name="m_3" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Member 4</label>
+                            <input type="text" placeholder="TeamMember 4" name="m_4" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Member 5</label>
+                            <input type="text" placeholder="TeamMember 5" name="m_5" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Member 6</label>
+                            <input type="text" placeholder="TeamMember 6" name="m_6" required>
+                        </div>   
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div class="backBtn">
+                        <i class="uil uil-navigator"></i>
+                        <span class="btnText">Back</span>
+                    </div>
+                    
+                    <button class="sumbit">
+                        <span class="btnText">Submit</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+</div>
+<!-- 
+<?php
+    require_once "Includes/register_view.inc.php";
+    check_register_error();
+?>   -->
+<script src="script.js"></script>
+
+</body>
+</html>
