@@ -36,18 +36,8 @@ function is_email_taken(object $pdo, string $email)
     }
 }
 
-function create_user(object $pdo,string $name, $date ,string $c_name,int $m_number,string $dept,string $email)
+function create_user(object $pdo,string $name, $date ,string $c_name,int $m_number,string $dept,string $email, string $pr_topic,string $pr_type,int $pr_cost,int $ini_pay,string $pay_method, $O_date, $L_date)
 {
-    set_user($pdo,$name, $date ,$c_name, $m_number, $dept, $email);
+    set_user($pdo, $name, $date , $c_name, $m_number,$dept,$email,$pr_topic,$pr_type,$pr_cost,$ini_pay,$pay_method, $O_date, $L_date);
 }
 
-
-function add_project(object $pdo, string $pr_topic,string $pr_type,int $pr_cost,int $ini_pay,string $pay_method, $O_date, $L_date, string $email)
-{
-    set_project($pdo, $pr_topic, $pr_type, $pr_cost, $ini_pay, $pay_method, $O_date, $L_date, $email);
-}
-
-function add_members(object $pdo, string $m_1, string $m_2, string $m_3, string $m_4, string $m_5, string $m_6)
-{
-    set_members($pdo, $m_1, $m_2, $m_3, $m_4, $m_5, $m_6);
-}

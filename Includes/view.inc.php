@@ -1,12 +1,14 @@
 <?php
 declare(strict_types=1);
 
-if ($_SERVER['REQUEST_METHOD']=="POST"){
-    $name=$_POST["Name"];
-    $c_name=$_POST["College_name"];
-    $dept=$_POST["Department"];
+function get_data(object $pdo,string $s_name, string $c_name,string $dept){
+    $query = "SELECT * FROM login WHERE username = :username;";
 
-    require_once "dbh.inc.php";
-    require_once "login_contr.inc.php";
-    // get_data($pdo, $name, $c_name, $dept);
+        $stmt = $pdo -> prepare($query);
+
+        $stmt->bindParam(":username", $s_name);
+
+        $stmt->execute();
+        $result = $stmt -> fetch(PDO :: FETCH_ASSOC);
+        return $result;
 }

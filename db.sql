@@ -15,7 +15,15 @@ CREATE TABLE student(
     m_number BIGINT NOT NULL,
     dept varchar(150) NOT NULL,
     email varchar(150) NOT NULL,
-    primary key(email)
+    ID int auto_increment primary key,
+    topic varchar(100) NOT NULL,
+    p_type varchar(50) NOT NULL,
+    p_cost int NOT NULL,
+    ini_pay int NOT NULL,
+    p_method varchar(50) NOT NULL,
+    on_date DATE NOT NULL,
+    l_date DATE NOT NULL,
+    primary key(email) 
 );
 
 -- Project --
