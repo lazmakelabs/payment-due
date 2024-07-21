@@ -9,10 +9,14 @@
 <body>
 <div class="container">
     <div class="logo"><img src="make labs logo.png" alt=""></div>
+                    <div class="status">
+                        <a href="/PAYMENT DUE/view.php" >Status</a>
+                    </div>
         <header>Registration</header>
-        <form action="#" method="post">
+        <form action="Includes/register.inc.php" method="post">
             <div class="form first">
                 <div class="details personal">
+                    
                     <div class="project-topic">
                         <label>Project Topic :</label>
                         <input type="text" placeholder="Enter project name" name="pr_topic" required>
@@ -23,8 +27,8 @@
                             <input type="text" placeholder="Enter your name" name="s_name" required>
                         </div>
                         <div class="input-field">
-                            <label>Date </label>
-                            <input type="date" placeholder="Enter birth date" name="date" required>
+                            <label>Date of Birth</label>
+                            <input type="date" placeholder="Enter birth date" name="date" required min="2000-01-01" max="2024-07-21">
                         </div>
                         <div class="input-field">
                             <label>College Name</label>
@@ -78,61 +82,18 @@
                             <input type="date" placeholder="Enter expiry date" name="L_date" required>
                         </div>
                     </div>
-                    <button class="nextBtn">
-                        <span class="btnText">Next</span>
-                        <i class="uil uil-navigator"></i>
+                     <button class="nextBtn" type="submit">
+                        <span class="btnText">Submit</span>
                     </button>
                 </div> 
             </div>
-            <div class="form second">
-                <div class="details address">
-                    <span class="title">Team Members</span>
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>Member 1</label>
-                            <input type="text" placeholder="TeamMember 1" name="m_1" required>
-                        </div>
-                        <div class="input-field">
-                            <label>Member 2</label>
-                            <input type="text" placeholder="TeamMember 2" name="m_2" required>
-                        </div>
-                        <div class="input-field">
-                            <label>Member 3</label>
-                            <input type="text" placeholder="TeamMember 3" name="m_3" required>
-                        </div>
-                        <div class="input-field">
-                            <label>Member 4</label>
-                            <input type="text" placeholder="TeamMember 4" name="m_4" required>
-                        </div>
-                        <div class="input-field">
-                            <label>Member 5</label>
-                            <input type="text" placeholder="TeamMember 5" name="m_5" required>
-                        </div>
-                        <div class="input-field">
-                            <label>Member 6</label>
-                            <input type="text" placeholder="TeamMember 6" name="m_6" required>
-                        </div>   
-                    </div>
-                </div>
-                <div class="buttons">
-                    <div class="backBtn">
-                        <i class="uil uil-navigator"></i>
-                        <span class="btnText">Back</span>
-                    </div>
-                    
-                    <button class="sumbit">
-                        <span class="btnText">Submit</span>
-                        <i class="uil uil-navigator"></i>
-                    </button>
-                </div>
-            </div>
         </form>
 </div>
-<!-- 
+
 <?php
     require_once "Includes/register_view.inc.php";
     check_register_error();
-?>   -->
+?> 
 <script src="script.js"></script>
 
 </body>

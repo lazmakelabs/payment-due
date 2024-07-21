@@ -15,13 +15,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
     $pay_method=$_POST["pay_method"];
     $O_date=$_POST["O_date"];
     $L_date=$_POST["L_date"];
-    // members
-    // $m_1=$_POST["m_1"];
-    // $m_2=$_POST["m_2"];
-    // $m_3=$_POST["m_3"];
-    // $m_4=$_POST["m_4"];
-    // $m_5=$_POST["m_5"];
-    // $m_6=$_POST["m_6"];
 
     try {
         require_once "dbh.inc.php";
@@ -44,9 +37,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
         if(is_phoneno_invalid($m_number)){
             $errors["invalid_phoneno"]="Phone Number is invalid!";
         }
-        if(is_email_taken($pdo, $email)){
-            $errors["email_taken"]="Account already exist try signing in.";
-        }
 
         if ($errors){
             $_SESSION["errors_register"]= $errors;
@@ -56,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 
         create_user($pdo, $name, $date , $c_name, $m_number, $dept, $email);
         add_project($pdo, $pr_topic, $pr_type, $pr_cost, $ini_pay, $pay_method, $O_date, $L_date, $email);
-        // add_members($pdo, $m_1, $m_2, $m_3, $m_4, $m_5, $m_6);
         header("Location: ../register.php?register=success");
 
         $pdo = null;
