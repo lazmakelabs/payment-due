@@ -1,9 +1,9 @@
 <?php 
 declare(strict_types=1);
 
-function set_user(object $pdo,string $name, $date ,string $c_name,int $m_number,string $dept,string $email, string $pr_topic,string $pr_type,int $pr_cost,int $ini_pay,string $pay_method, $O_date, $L_date)
+function set_user(object $pdo,string $name, $date ,string $c_name,int $m_number,string $dept,string $email, string $pr_topic,string $pr_type,int $pr_cost,int $ini_pay,string $pay_method, $O_date, $L_date, int $remaining)
 {
-    $query = "INSERT INTO student (s_name ,s_date ,c_name ,m_number ,dept, email, topic ,p_type ,p_cost ,ini_pay ,p_method, on_date, l_date) VALUES (:s_name , :date_s, :c_name, :m_number, :dept, :email, :topic , :p_type, :p_cost, :ini_pay, :p_method, :on_date, :l_date);";
+    $query = "INSERT INTO student (s_name ,s_date ,c_name ,m_number ,dept, email, topic ,p_type ,p_cost ,ini_pay ,p_method, on_date, l_date, remaining) VALUES (:s_name , :date_s, :c_name, :m_number, :dept, :email, :topic , :p_type, :p_cost, :ini_pay, :p_method, :on_date, :l_date, :remaining);";
         $stmt = $pdo -> prepare($query);
 
         $stmt->bindParam(":s_name", $name); 
@@ -19,6 +19,7 @@ function set_user(object $pdo,string $name, $date ,string $c_name,int $m_number,
         $stmt->bindParam(":p_method", $pay_method);
         $stmt->bindParam(":on_date", $O_date);
         $stmt->bindParam(":l_date", $L_date);
+        $stmt->bindParam(":remaining", $remaining);
 
         $stmt->execute();
 }

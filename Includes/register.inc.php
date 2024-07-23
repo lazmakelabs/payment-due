@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
     $pay_method=$_POST["pay_method"];
     $O_date=$_POST["O_date"];
     $L_date=$_POST["L_date"];
+    $remaining=$pr_cost-$ini_pay;
 
     try {
         require_once "dbh.inc.php";
@@ -44,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
             die();
         }
 
-        create_user($pdo, $name, $date , $c_name, $m_number, $dept, $email, $pr_topic, $pr_type, $pr_cost, $ini_pay, $pay_method, $O_date, $L_date);
+        create_user($pdo, $name, $date , $c_name, $m_number, $dept, $email, $pr_topic, $pr_type, $pr_cost, $ini_pay, $pay_method, $O_date, $L_date, $remaining);
         header("Location: ../register.php?register=success");
 
         $pdo = null;

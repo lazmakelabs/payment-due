@@ -36,8 +36,8 @@ function is_email_taken(object $pdo, string $email)
     }
 }
 
-function create_user(object $pdo,string $name, $date ,string $c_name,int $m_number,string $dept,string $email, string $pr_topic,string $pr_type,int $pr_cost,int $ini_pay,string $pay_method, $O_date, $L_date)
+function create_user(object $pdo,string $name, $date ,string $c_name,int $m_number,string $dept,string $email, string $pr_topic,string $pr_type,int $pr_cost,int $ini_pay,string $pay_method, $O_date, $L_date, $remaining)
 {
-    set_user($pdo, $name, $date , $c_name, $m_number,$dept,$email,$pr_topic,$pr_type,$pr_cost,$ini_pay,$pay_method, $O_date, $L_date);
+    set_user($pdo, $name, $date , $c_name, $m_number,$dept,$email,$pr_topic,$pr_type,$pr_cost,$ini_pay,$pay_method, $O_date, $L_date, $remaining);
 }
 

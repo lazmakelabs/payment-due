@@ -9,6 +9,7 @@
 <body>
 <?php
 require_once "Includes/view.inc.php";
+require_once "Includes/config_session.inc.php";
 
 if ($_SERVER['REQUEST_METHOD']=="POST"){
     $s_name=$_POST["s_name"];
@@ -30,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
     $on_date= $result["on_date"];
     $L_date= $result["l_date"];
     $remaining= $p_cost-$ini_pay;
+    $_SESSION["email"]=$E_mail;
 }else {
     header("Location ../register.php");
     die();
@@ -42,13 +44,16 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
             <a href="view.php" >Back</a>
         </div>
         <header>Registration</header>
-        <form action="Includes/register.inc.php" method="post">
+        <form action="update.php" method="post">
             <div class="form first">
                 <div class="details personal">
                     
                     <div class="project-topic">
+                    <div class="input-field"></div>    
                         <label>Project Topic :</label>
                         <?php echo"<p>".$pr_topic."</p>"; ?>
+                        <label>Project ID :</label>
+                        <?php echo"<p>".$ID."</p>"; ?>
                     </div>
                     <div class="fields">
                         <div class="input-field">
@@ -90,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
                             <?php echo"<p>".$p_cost."</p>"; ?>
                         </div>
                         <div class="input-field">
-                            <label>Initial payment ₹ </label>
+                            <label>Paid Amount ₹ </label>
                             <?php echo"<p>".$ini_pay."</p>"; ?>
                         </div>
                         <div class="input-field">
@@ -110,8 +115,11 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
                             <?php echo"<p>".$L_date."</p>"; ?>
                         </div>
                     </div>
+                    <hr>
+                    <button class="nextBtn" type="submit">
+                        <span class="btnText">Update payment</span>
+                    </button>
                 </div> 
-                <hr>
             </div>
         </form>
 </div>
