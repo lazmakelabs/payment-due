@@ -12,8 +12,11 @@ declare(strict_types=1);
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <form action="Includes/view.inc.php" method="post">
+    <form action="status.php" method="post">
         <div class="container1">
+        <div class="status">
+            <a href="middle.php" >Back</a>
+        </div>
             <div class="form first1">
                 <div class="details personal1">
                     <div class="fields">

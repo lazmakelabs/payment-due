@@ -11,9 +11,10 @@
         <img src="make labs logo.png" alt="">
         <form method="post">
             <div class="mode">
-            <h2>Mode of selection</h2>
+            <h2>&emsp;&emsp;&emsp;&nbsp;Welcome</h2>
+            <br>
         
-            <button type="submit" class="submitBtn"><a href="view.php">Status</a></button>
+            <button type="submit" class="submitBtn"><a href="view.php">Status</a></button>&emsp;&emsp;
 
             <button type="submit" class="submit"><a href="register.php">New updation</a></button> 
         </div>
