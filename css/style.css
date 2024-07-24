@@ -247,6 +247,7 @@ form .buttons button , .backBtn{
 
 
 
+
 .container1 form .title1{
    display: block;
    margin-bottom: 8px;
@@ -256,7 +257,9 @@ form .buttons button , .backBtn{
    color: #333;
 }
 
-
+.container1 h2{
+    text-align: center;
+}
 
 .input-field1 input, select{
    outline: none;
