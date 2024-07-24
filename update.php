@@ -8,17 +8,21 @@
 </head>
 <body>
     <div class="form-container1">
-        <img src="make labs logo.png" alt="">
+        <!-- <img src="make labs logo.png" alt=""> -->
+        <div class="status">
+            <a href="view.php" >Back</a>
+        </div>
         <form method="post" action="Includes/update.inc.php">
-            <div class="status">
-                <a href="status.php" >Back</a>
-            </div>
             <div class="mode">
-            <h2>&emsp;&emsp;&emsp;&nbsp;Update</h2>
-            <div class="input-field">
-                <label>Payment amount</label>
-                <input type="text" placeholder="Enter amount" name="pay_amt" required>
-            </div> 
+                <h2>&emsp;&emsp;&emsp;&nbsp;Update</h2>
+                <div class="input-field">
+                    <label>Payment amount</label>
+                    <input type="text" placeholder="Enter amount" name="pay_amt" required>
+                </div> 
+                <div class="input-field">
+                    <label>Payment date</label>
+                    <input type="date" placeholder="Enter date" name="pay_date" required>
+                </div>
             </div>
        </form>
     </div>

@@ -10,7 +10,7 @@
 <div class="container">
     <div class="logo"><img src="make labs logo.png" alt=""></div>
         <div class="status">
-            <a href="/PAYMENT DUE/view.php" >Status</a>
+            <a href="middle.php" >Back</a>
         </div>
         <header>Registration</header>
         <form action="Includes/register.inc.php" method="post">
