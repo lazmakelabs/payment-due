@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
         <div class="status">
             <a href="view.php" >Back</a>
         </div>
-        <header>Registration</header>
+        <header>Status</header>
         <form action="update.php" method="post">
             <div class="form first">
                 <div class="details personal">
@@ -92,15 +92,15 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
                         </div>
                         <div class="input-field">
                             <label>Project Cost ₹ </label>
-                            <?php echo"<p>".$p_cost."</p>"; ?>
+                            <?php echo"<p  class='blue'>".$p_cost."</p>"; ?>
                         </div>
                         <div class="input-field">
                             <label>Paid Amount ₹ </label>
-                            <?php echo"<p>".$ini_pay."</p>"; ?>
+                            <?php echo"<p class='green'>".$ini_pay."</p>"; ?>
                         </div>
                         <div class="input-field">
                             <label>Remaining Payment </label>
-                            <?php echo"<p>".$remaining."</p>"; ?>
+                            <?php echo"<p  class='red'>".$remaining."</p>"; ?>
                         </div>
                         <div class="input-field">
                             <label>Payment Method</label>
