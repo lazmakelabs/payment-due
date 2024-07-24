@@ -15,3 +15,18 @@ function get_data(object $pdo,string $s_name, string $c_name,string $dept){
         return $result;
 }
 
+function get_date(object $pdo,int $ID){
+    $query = "SELECT * FROM dates WHERE ID= :ID";
+
+    $stmt = $pdo -> prepare($query);
+
+    $stmt->bindParam(":ID", $ID);
+
+    $stmt -> execute();
+    $result= $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $dates=[];
+    foreach ($result as $row){
+        $dates[]=$row['p_date']." - ".$row['amount'];
+    }
+    return $dates;
+}

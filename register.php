@@ -36,7 +36,7 @@
                         </div>
                         <div class="input-field">
                             <label>Mobile Number</label>
-                            <input type="number" placeholder="Enter mobile number"name="m_number" required>
+                            <input type="tel" placeholder="Enter mobile number"name="m_number" required>
                         </div>
                         <div class="input-field">
                             <label>Department</label>
