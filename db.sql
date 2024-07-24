@@ -41,15 +41,10 @@ CREATE TABLE project(
     Foreign key(email) references student(email) 
 );
 
--- members --
+-- dates --
 
--- CREATE TABLE members(
---     ID int auto_increment,
---     m_1 varchar(100),
---     m_2 varchar(100),
---     m_3 varchar(100),
---     m_4 varchar(100),
---     m_5 varchar(100),
---     m_6 varchar(100),
---     Foreign key(ID) references project(ID) 
--- );
+CREATE TABLE dates(
+    ID int,
+    p_date date,
+    amount int
+)
