@@ -46,6 +46,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
         }
 
         create_user($pdo, $name, $date , $c_name, $m_number, $dept, $email, $pr_topic, $pr_type, $pr_cost, $ini_pay, $pay_method, $O_date, $L_date, $remaining);
+        $ID=get_ID($pdo, $email);
+        add_date($pdo,$O_date,$ID,$ini_pay);
+
         header("Location: ../register.php?register=success");
 
         $pdo = null;
