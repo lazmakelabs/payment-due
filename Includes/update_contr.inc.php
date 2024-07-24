@@ -26,3 +26,12 @@ function update_amount(object $pdo,int $cost,int $paid,int $remaining, int $pay_
     $stmt->bindParam(":email", $E_mail);
     $stmt->execute();
 }
+
+function add_date(object $pdo, $date,int $ID,int $pay_amt){
+    $query = "Insert into dates (ID, p_date, amount) values (:ID ,:p_date ,:pay_amt)";
+    $stmt = $pdo -> prepare($query);
+    $stmt->bindParam(":ID", $ID);
+    $stmt->bindParam(":p_date", $date);
+    $stmt->bindParam(":pay_amt", $pay_amt);
+    $stmt->execute();
+}

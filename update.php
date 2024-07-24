@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-<form action="status.php" method="post">
+<form action="Includes/update.inc.php" method="post">
         <div class="container1">
         <div class="status">
-            <a href="middle.php" >Back</a>
+            <a href="middle.php">Back</a>
         </div>
             <div class="form first1">
             <h2>Update</h2>

@@ -2,6 +2,7 @@
 if ($_SERVER['REQUEST_METHOD']=="POST"){
     
     $pay_amt= $_POST["pay_amt"];
+    $pay_date= $_POST["pay_date"];
 
     try{
         require_once "dbh.inc.php";
@@ -15,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
         $remaining= $result['remaining'];
         $paid= $result['ini_pay'];
         $p_cost= $result['p_cost'];
+        $ID= $result['ID'];
 
         $errors=[];
         
@@ -33,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
             die();
         }
         
+        add_date($pdo, $pay_date, $ID, $pay_amt);
         update_amount($pdo, $p_cost, $paid, $remaining, $pay_amt, $E_mail);
         header("Location: ../view.php");
 
