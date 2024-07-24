@@ -27,14 +27,6 @@ function is_phoneno_invalid(int $phoneno){
     }
 }
 
-function is_email_taken(object $pdo, string $email)
-{
-    if(get_email($pdo, $email)) {
-        return true;
-    } else {
-        return false;
-    }
-}
 
 function create_user(object $pdo,string $name, $date ,string $c_name,int $m_number,string $dept,string $email, string $pr_topic,string $pr_type,int $pr_cost,int $ini_pay,string $pay_method, $O_date, $L_date, $remaining)
 {

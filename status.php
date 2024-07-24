@@ -7,18 +7,14 @@
    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    
 <?php
-require_once "Includes/view.inc.php";
-require_once "Includes/config_session.inc.php";
-
-if ($_SERVER['REQUEST_METHOD']=="POST"){
-    $s_name=$_POST["s_name"];
-    $c_name=$_POST["c_name"];
-    $dept=$_POST["dept"];
-
-    require_once "Includes/dbh.inc.php";
-    $result=get_data($pdo, $s_name, $c_name, $dept);
-    $Name= $result["s_name"];
+    require_once "Includes/config_session.inc.php";
+    $result=$_SESSION['result'];
+    $dates=$_SESSION['dates'];
+    $s_name= $result["s_name"];
+    $c_name= $result["c_name"];
+    $dept=$result["dept"];
     $Mobile = $result["m_number"];
     $E_mail= $result["email"];
     $ID= $result["ID"];
@@ -31,14 +27,8 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
     $on_date= $result["on_date"];
     $L_date= $result["l_date"];
     $remaining= $p_cost-$ini_pay;
-    $_SESSION["email"]=$E_mail;
-    $dates=get_date($pdo, $ID);
-}else {
-    header("Location ../register.php");
-    die();
-}
-?>
 
+?>
 <div class="container">
     <div class="logo"><img src="make labs logo.png" alt=""></div>
         <div class="status">
@@ -139,11 +129,6 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
         </form>
 </div>
 
-<?php
-    require_once "Includes/register_view.inc.php";
-    check_register_error();
-?> 
-<script src="script.js"></script>
 
 </body>
 </html>

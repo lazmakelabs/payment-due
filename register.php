@@ -1,3 +1,9 @@
+<?php
+require_once "Includes/config_session.inc.php";
+require_once "Includes/register_view.inc.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +50,7 @@
                         </div>
                         <div class="input-field">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your Email" name="email" required>
+                            <input type="email" placeholder="Enter your Email" name="email" required>
                         </div>
                     </div>
                 </div>
@@ -91,10 +97,9 @@
 </div>
 
 <?php
-    require_once "Includes/register_view.inc.php";
     check_register_error();
 ?> 
-<script src="script.js"></script>
+
 
 </body>
 </html>

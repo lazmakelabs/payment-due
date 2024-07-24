@@ -1,5 +1,6 @@
 <?php
-declare(strict_types=1);
+require_once "Includes/config_session.inc.php";
+require_once "Includes/view_view.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@ declare(strict_types=1);
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <form action="status.php" method="post">
+    <form action="Includes/view.inc.php" method="post">
         <div class="container1">
         <div class="status">
             <a href="middle.php" >Back</a>
@@ -40,7 +41,9 @@ declare(strict_types=1);
             </div>
         </div>    
     </form>
-
+<?php
+check_view_error();
+?>
 
 </body>
 </html>

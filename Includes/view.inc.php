@@ -1,32 +1,47 @@
 <?php
-declare(strict_types=1);
+if ($_SERVER['REQUEST_METHOD']=="POST"){
+    $s_name=$_POST["s_name"];
+    $c_name=$_POST["c_name"];
+    $dept=$_POST["dept"];
 
-function get_data(object $pdo,string $s_name, string $c_name,string $dept){
-    $query = "SELECT * FROM student WHERE s_name= :s_name AND c_name=:c_name AND dept=:dept";
+    try {
+        require_once "config_session.inc.php";
+        require_once "dbh.inc.php";
+        require_once "view_model.inc.php";
+        require_once "view_contr.inc.php";
+        $result=get_data($pdo, $s_name, $c_name, $dept);
 
-        $stmt = $pdo -> prepare($query);
+    $errors=[];
 
-        $stmt->bindParam(":s_name", $s_name);
-        $stmt->bindParam(":c_name", $c_name);
-        $stmt->bindParam(":dept", $dept);
-
-        $stmt->execute();
-        $result = $stmt -> fetch(PDO :: FETCH_ASSOC);
-        return $result;
-}
-
-function get_date(object $pdo,int $ID){
-    $query = "SELECT * FROM dates WHERE ID= :ID";
-
-    $stmt = $pdo -> prepare($query);
-
-    $stmt->bindParam(":ID", $ID);
-
-    $stmt -> execute();
-    $result= $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $dates=[];
-    foreach ($result as $row){
-        $dates[]=$row['p_date']." - ".$row['amount'];
+    $ID= $result['ID'];
+    $E_mail= $result['email'];
+    
+    if (!student_exist($result)){
+        $errors["student"]= "Student doesn't exist";
+    }else{
+        $dates=get_date($pdo, $ID);
+        $_SESSION['result']=$result;
+        $_SESSION['dates']=$dates;
+        $_SESSION['email']= $E_mail;
     }
-    return $dates;
+
+    if ($errors){
+        $_SESSION["errors_view"]= $errors;
+        header("Location: ../view.php");
+        die();
+    }    
+
+    $pdo=null;
+    $stmt=null;
+
+    header("Location: ../status.php");
+    die();
+    }
+    catch (PDOException $e) {
+
+        die("Query failed:" . $e ->getMessage());
+    }
+} else {
+        header("Location ../view.php");
+        die();
 }

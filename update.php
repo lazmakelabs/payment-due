@@ -1,3 +1,8 @@
+<?php
+    require_once "Includes/config_session.inc.php";
+    require_once "Includes/update_view.inc.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +36,10 @@
                     <span class="btnText1">Submit</span>
                 </button>
             </div>
-        </div>    
+        </div>
+        <?php
+    check_update_error()
+    ?>    
     </form>
 </body>
 </html>

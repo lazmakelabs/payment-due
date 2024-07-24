@@ -29,14 +29,21 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 
         require_once "register_view.inc.php";
 
-        if(is_input_empty($name, $date , $c_name, $m_number, $dept, $email)){
+        
+        if(is_numeric($m_number)){
+            if(is_input_empty($name, $date , $c_name, $m_number, $dept, $email)){
             $errors["empty_input"]="Fill in all fields!";
+            }
+        }else{
+            $errors["number datatype"]="Invalid phone number";
         }
         if(is_email_invalid($email)){
             $errors["invalid_email"]= "Invalid email ID!";
         }
         if(is_phoneno_invalid($m_number)){
             $errors["invalid_phoneno"]="Phone Number is invalid!";
+        }if($pr_cost<$ini_pay){
+            $errors["Amount"]="Payment is more than the cost";
         }
 
         if ($errors){
@@ -65,6 +72,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 
 } 
 else {
-    header("Location ../register.php");
+    header("Location ../register.php?post=fail");
     die();
 }

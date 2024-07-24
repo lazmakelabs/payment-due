@@ -30,8 +30,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
 
         if ($errors){
             $_SESSION["errors_update"]= $errors;
-            check_update_error();
-            header("Location: ../view.php");
+            header("Location: ../update.php");
             die();
         }
         

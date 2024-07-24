@@ -9,7 +9,6 @@ function check_register_error(){
 
         foreach ($errors as $error){
             echo "<script>alert('$error')</script>";    
-            echo $error;
             
         }
         unset($_SESSION["errors_register"]);
