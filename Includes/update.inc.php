@@ -17,8 +17,10 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
         $p_cost= $result['p_cost'];
 
         $errors=[];
-
-        if($pay_amt<0){
+        
+        if(!$result){
+            $errors["Student"]="Student doesn't exist";
+        }if($pay_amt<0){
             $errors["negative"]="Amount cannot be negative";
         }if($pay_amt>$remaining){
             $errors["amount"]="Amount cannot be greater than remaining";
