@@ -84,7 +84,7 @@ p.red{
 .container form{
     position: relative;
     margin-top: 16px;
-    min-height: 530px;
+    min-height: 400px;
     background-color: #fff;
     overflow: hidden;
 }

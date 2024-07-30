@@ -16,17 +16,17 @@ require_once "Includes/register_view.inc.php";
 <div class="container">
     <div class="logo"><img src="make labs logo.png" alt=""></div>
         <div class="status">
-            <a href="middle.php" >Back</a>
+            <a href="index.php" >Login</a>
         </div>
         <header>Registration</header>
         <form action="Includes/register.inc.php" method="post">
             <div class="form first">
                 <div class="details personal">
                     
-                    <div class="project-topic">
+                    <!-- <div class="project-topic">
                         <label>Project Topic :</label>
                         <input type="text" placeholder="Enter project name" name="pr_topic" required>
-                    </div>
+                    </div> -->
                     <div class="fields">
                         <div class="input-field">
                             <label>Student Name</label>
@@ -55,17 +55,21 @@ require_once "Includes/register_view.inc.php";
                     </div>
                 </div>
                 <div class="details project">
-                    <span class="title">Project Details</span>
+                    <span class="title">Internship Details</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>Project Type</label>
-                            <input type="text" placeholder="Enter ID type" name="pr_type" required>
+                            <label>Title</label>
+                            <input type="text" placeholder="Enter your name" name="Title" required>
                         </div>
                         <div class="input-field">
-                            <label>Project Cost ₹ </label>
-                            <input type="number" placeholder="Enter Project Cost ₹" name="pr_cost" required>
+                            <label>Internship duration (in days)</label>
+                            <input type="number" placeholder="Duration of course" name="duration" required>
                         </div>
                         <div class="input-field">
+                            <label>Joining date </label>
+                            <input type="date" placeholder="Joining date" name="J_date" required>
+                        </div>
+                        <!-- <div class="input-field">
                             <label>Initial Payment ₹ </label>
                             <input type="number" placeholder="Enter Initial Payment ₹" name="ini_pay" required>
                         </div>
@@ -86,7 +90,7 @@ require_once "Includes/register_view.inc.php";
                         <div class="input-field">
                             <label>Last Date</label>
                             <input type="date" placeholder="Enter expiry date" name="L_date" required>
-                        </div>
+                        </div> -->
                     </div>
                      <button class="nextBtn" type="submit">
                         <span class="btnText">Submit</span>

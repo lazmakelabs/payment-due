@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
     <div class="form-container">
-        <img src="make labs logo.png" alt="">
+        <img src="make labs logo.png" alt=""><br>
+        <a href="register.php">Register</a>
         <form action="Includes/login.inc.php" method="post">
-            <h2>Admin Login</h2>
+            <h2>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Login</h2>
             <div class="input-field">
                 <label>Username / Phonenumber</label>
                 <input type="text" name="username" required>

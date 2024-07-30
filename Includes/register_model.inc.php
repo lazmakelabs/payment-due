@@ -1,9 +1,10 @@
 <?php 
 declare(strict_types=1);
 
-function set_user(object $pdo,string $name, $date ,string $c_name,int $m_number,string $dept,string $email, string $pr_topic,string $pr_type,int $pr_cost,int $ini_pay,string $pay_method, $O_date, $L_date, int $remaining)
+function set_user(object $pdo,string $name, $date ,string $c_name,int $m_number,string $dept,string $email, string $Title ,int $duration, $J_date)
 {
-    $query = "INSERT INTO student (s_name ,s_date ,c_name ,m_number ,dept, email, topic ,p_type ,p_cost ,ini_pay ,p_method, on_date, l_date, remaining) VALUES (:s_name , :date_s, :c_name, :m_number, :dept, :email, :topic , :p_type, :p_cost, :ini_pay, :p_method, :on_date, :l_date, :remaining);";
+    $query = "INSERT INTO student (s_name ,s_date ,c_name ,m_number ,dept, email, Title, duration, J_date) 
+            VALUES (:s_name , :date_s, :c_name, :m_number, :dept, :email, :Title , :duration, :J_date);";
         $stmt = $pdo -> prepare($query);
 
         $stmt->bindParam(":s_name", $name); 
@@ -12,15 +13,9 @@ function set_user(object $pdo,string $name, $date ,string $c_name,int $m_number,
         $stmt->bindParam(":m_number", $m_number);
         $stmt->bindParam(":dept", $dept);
         $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":topic", $pr_topic); 
-        $stmt->bindParam(":p_type", $pr_type);
-        $stmt->bindParam(":p_cost", $pr_cost);
-        $stmt->bindParam(":ini_pay", $ini_pay);
-        $stmt->bindParam(":p_method", $pay_method);
-        $stmt->bindParam(":on_date", $O_date);
-        $stmt->bindParam(":l_date", $L_date);
-        $stmt->bindParam(":remaining", $remaining);
-
+        $stmt->bindParam(":Title", $Title); 
+        $stmt->bindParam(":duration", $duration);
+        $stmt->bindParam(":J_date", $J_date);
         $stmt->execute();
 }
 

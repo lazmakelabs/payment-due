@@ -8,14 +8,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
     $dept= $_POST["dept"];
     $email=$_POST["email"];
     // Project details
-    $pr_topic=$_POST["pr_topic"];
-    $pr_type=$_POST["pr_type"];
-    $pr_cost=$_POST["pr_cost"];
-    $ini_pay=$_POST["ini_pay"];
-    $pay_method=$_POST["pay_method"];
-    $O_date=$_POST["O_date"];
-    $L_date=$_POST["L_date"];
-    $remaining=$pr_cost-$ini_pay;
+    $Title=$_POST["Title"];
+    $duration=$_POST["duration"];
+    $J_date=$_POST["J_date"];
 
     try {
         require_once "dbh.inc.php";
@@ -42,8 +37,6 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
         }
         if(is_phoneno_invalid($m_number)){
             $errors["invalid_phoneno"]="Phone Number is invalid!";
-        }if($pr_cost<$ini_pay){
-            $errors["Amount"]="Payment is more than the cost";
         }
 
         if ($errors){
@@ -52,9 +45,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
             die();
         }
 
-        create_user($pdo, $name, $date , $c_name, $m_number, $dept, $email, $pr_topic, $pr_type, $pr_cost, $ini_pay, $pay_method, $O_date, $L_date, $remaining);
-        $ID=get_ID($pdo, $email);
-        add_date($pdo,$O_date,$ID,$ini_pay);
+        create_user($pdo, $name, $date , $c_name, $m_number, $dept, $email, $Title, $duration, $J_date);
+        // $ID=get_ID($pdo, $email);
+        // add_date($pdo,$O_date,$ID,$ini_pay);
 
         header("Location: ../register.php?register=success");
 

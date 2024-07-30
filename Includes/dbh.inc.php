@@ -1,6 +1,6 @@
 <?php
 
-$dsn = "mysql:host=localhost; dbname=project register;";
+$dsn = "mysql:host=localhost; dbname=lms;";
 $dbusername ="root";
 $dbpassword ="makelabs";
 
