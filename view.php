@@ -24,16 +24,20 @@ require_once "Includes/view_view.inc.php";
                         <div class="input-field1">
                             <label>College Name</label>
                             <select type="text" placeholder="College name" name="c_name" id="college" required>
-                                
+                                <option value="">Select College</option>
                             </select>
                         </div>
                         <div class="input-field1">
                             <label>Department</label>
-                            <select id="department" type="text" placeholder="Department Name" name="dept" required></select>
+                            <select id="department" type="text" placeholder="Department Name" name="dept" required>
+                                <option value="">Select Department</option>
+                            </select>
                         </div>
                         <div class="input-field1">
                             <label>Name</label>
-                            <select id="name" type="text" placeholder="Student Name" name="s_name" required></select>
+                            <select id="name" type="text" placeholder="Student Name" name="s_name" required>
+                                <option value="">Select Student</option>
+                            </select>
                         </div>
                     </div>
                 </div>

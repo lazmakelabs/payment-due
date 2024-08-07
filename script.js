@@ -5,7 +5,7 @@ var department_dropdown= document.getElementById("department");
 var name_dropdown= document.getElementById("name");
 
 async function getCollege(){
-    var response= await fetch("http://localhost/ajax%20test/api_data.php");
+    var response= await fetch("http://localhost/payment%20due/api_data.php");
 
     var json_data=await response.json();
 
@@ -26,7 +26,7 @@ async function getCollege(){
 
 async function getDepartment(c_name){
     var response=await fetch(
-        "http://localhost/ajax%20test/api_data.php?type=department&c_name=" + c_name
+        "http://localhost/payment%20due/api_data.php?type=department&c_name=" + c_name
     );
 
     var json_data = await response.json();
@@ -45,7 +45,7 @@ async function getDepartment(c_name){
 
 async function getName(dept, c_name){
     var response=await fetch(
-        "http://localhost/ajax%20test/api_data.php?type=name&dept=" + dept + "&c_name=" + c_name
+        "http://localhost/payment%20due/api_data.php?type=name&c_name=" + c_name + "&dept=" + dept
     );
 
     var json_data = await response.json();
@@ -70,6 +70,5 @@ college_dropdown.onchange = function (){
 department_dropdown.onchange = function (){
     getName(department_dropdown.value, college_dropdown.value);
 }
-
 
 
