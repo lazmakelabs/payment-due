@@ -22,16 +22,18 @@ require_once "Includes/view_view.inc.php";
                 <div class="details personal1">
                     <div class="fields">
                         <div class="input-field1">
-                            <label>Student Name</label>
-                            <input type="text" placeholder="Enter your name" name="s_name" required>
-                        </div>
-                        <div class="input-field1">
                             <label>College Name</label>
-                            <input type="text" placeholder="Enter your College Name" name="c_name" required>
+                            <select type="text" placeholder="College name" name="c_name" id="college" required>
+                                
+                            </select>
                         </div>
                         <div class="input-field1">
                             <label>Department</label>
-                            <input type="text" placeholder="Enter your Department" name="dept" required>
+                            <select id="department" type="text" placeholder="Department Name" name="dept" required></select>
+                        </div>
+                        <div class="input-field1">
+                            <label>Name</label>
+                            <select id="name" type="text" placeholder="Student Name" name="s_name" required></select>
                         </div>
                     </div>
                 </div>
@@ -44,6 +46,6 @@ require_once "Includes/view_view.inc.php";
 <?php
 check_view_error();
 ?>
-
+<script src="script.js"></script>
 </body>
 </html>
